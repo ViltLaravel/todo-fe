@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-[#EEEEEE] sm:p-[40px] rounded-t-md shadow-lg">
+    <div class="bg-[#EEEEEE] p-[40px] rounded-t-md shadow-lg">
         <ol class="font-mono font-[400]">
             <ul v-for="todos in todo.data" :key="todos.id" class="flex justify-between sm:p-2">
                 <li>{{ todos.name }}</li>
