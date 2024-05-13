@@ -1,9 +1,9 @@
 <template>
     <div class="bg-[#EEEEEE] p-[40px] rounded-t-md shadow-lg">
         <ol class="font-mono font-[400]">
-            <ul v-for="todos in todo.data" :key="todos.id" class="flex justify-between sm:p-2">
+            <ul v-for="todos in todo.data" :key="todos.id" class="flex justify-between p-2">
                 <li>{{ todos.name }}</li>
-                <div class="space-x-2 sm:pt-1">
+                <div class="space-x-2 pt-1">
                     <button @click="editTodo(todos.id)" class="w-4 text-gray-500 hover:text-gray-600"><PencilAltIcon /></button>
                     <button @click="deleteTodo(todos.id)" class="w-4 text-red-500 hover:text-red-600"><TrashIcon /></button>
                 </div>
@@ -11,7 +11,7 @@
         </ol>
     </div>
     <div class="flex justify-center">
-        <div class="sm:w-[120px] bg-[#7469B6] hover:bg-violet-500 absolute -m-5 sm:px-3 sm:py-2 rounded-[50px] shadow-lg">
+        <div class="w-[120px] bg-[#7469B6] hover:bg-violet-500 absolute -m-5 px-3 py-2 rounded-[50px] shadow-lg">
             <button @click="clickTodo" class="items-center font-[600] font-mono text-gray-300">+ New Task</button>
         </div>
     </div>
