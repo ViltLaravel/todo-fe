@@ -24,7 +24,7 @@
         <div v-if="link.url === null" :key="index"
           class="relative sm:ml-[0px] md:ml-[200px] inline-flex items-center rounded-md bg-white px-3 py-2 text-xs font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0"
           v-html="link.label"></div>
-        <button v-else :key="index + 1" @click="emit('paginate', link.url)"
+        <button v-else :key="index + 1" @click="handlePagination(link.url)"
           class="relative ml-2 inline-flex items-center rounded-md bg-white px-3 py-2 text-xs font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0"
           v-html="link.label"></button>
       </div>
@@ -52,14 +52,10 @@ defineProps({
 
 const emit = defineEmits(['paginate'])
 
-const adjustUrl = async (url: string) => {
-  try {
-        const res = await axios.get(url);
-        if (res) {
-            console.log(res)
-        }
-    } catch (error) {
-        console.log('Failed fetching todo :', error)
-    }
+const handlePagination = (url: string) => {
+  if (url !== null && url !== '') {
+    const adjustedUrl = url.replace('http://', 'https://');
+    emit('paginate', adjustedUrl);
+  }
 }
 </script>
