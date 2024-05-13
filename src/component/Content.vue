@@ -90,7 +90,7 @@ const titleTodo = () => {
 }
 
 const fetchTodo = async (url: string | null) => {
-    const link = ref('https://todo-production-2d63.up.railway.app/api/todo')
+    const link = ref('https://todo-production-2d63.up.railway.app/api/todo' || 'http://todo-production-2d63.up.railway.app/api/todo')
     if (url !== null) {
         link.value = url
     }
