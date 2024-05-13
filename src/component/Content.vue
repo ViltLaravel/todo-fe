@@ -90,7 +90,7 @@ const titleTodo = () => {
 }
 
 const fetchTodo = async (url: string | null) => {
-    const link = ref('http://todo-production-2d63.up.railway.app/api/todo')
+    const link = ref('https://todo-production-2d63.up.railway.app/api/todo')
     if (url !== null) {
         link.value = url
     }
@@ -108,7 +108,7 @@ const fetchTodo = async (url: string | null) => {
 
 const submitTodo = async () => {
     try {
-        const res = await axios.post('http://todo-production-2d63.up.railway.app/api/todo', modeldata);
+        const res = await axios.post('https://todo-production-2d63.up.railway.app/api/todo', modeldata);
         if (res.status === 200) {
             show.value = false;
             modeldata.name = '';
@@ -121,7 +121,7 @@ const submitTodo = async () => {
 
 const editTodo = async (id: string) => {
     try {
-        const res = await axios.get(`http://todo-production-2d63.up.railway.app/api/todo/${id}`);
+        const res = await axios.get(`https://todo-production-2d63.up.railway.app/api/todo/${id}`);
         if (res.status === 200) {
             show.value = true;
             modeldata = res.data;
@@ -136,7 +136,7 @@ const editTodo = async (id: string) => {
 
 const updateTodo = async (id: string, modeldata: any) => {
     try {
-        const res = await axios.put(`http://todo-production-2d63.up.railway.app/api/todo/${id}/update`, modeldata);
+        const res = await axios.put(`https://todo-production-2d63.up.railway.app/api/todo/${id}/update`, modeldata);
         if (res) {
             show.value = false;
             modeldata.name = '';
@@ -149,7 +149,7 @@ const updateTodo = async (id: string, modeldata: any) => {
 
 const deleteTodo = async (id: string) => {
     try {
-        const res = await axios.delete(`http://todo-production-2d63.up.railway.app/api/todo/${id}`);
+        const res = await axios.delete(`https://todo-production-2d63.up.railway.app/api/todo/${id}`);
         if(res) {
             fetchTodo(null);
         }
