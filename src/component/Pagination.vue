@@ -33,7 +33,6 @@
 </template>
 
 <script setup lang="ts">
-import axios from 'axios';
 import type { PropType } from 'vue';
 interface Link {
   url: string
